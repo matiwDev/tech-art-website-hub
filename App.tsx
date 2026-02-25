@@ -11,6 +11,7 @@ import { ToolDetail } from './pages/ToolDetail';
 import { Blog } from './pages/Blog';
 import { Support } from './pages/Support';
 import { Privacy } from './pages/Privacy';
+import { Terms } from './pages/Terms';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 // Scroll to top wrapper
@@ -75,6 +76,7 @@ const App: React.FC = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/support" element={<Support />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
             </Routes>
             </main>
             <Footer />

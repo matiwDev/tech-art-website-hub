@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { blogData } from '../data/blogData';
-import { MessageSquare, Calendar, Tag, ChevronRight, Lock, Lightbulb } from 'lucide-react';
+import { Calendar, Tag, ChevronRight, Lightbulb } from 'lucide-react';
+import { Comments } from '../components/Comments';
 
 export const Blog: React.FC = () => {
   const [activePostId, setActivePostId] = useState(blogData[0].id);
@@ -100,54 +101,10 @@ export const Blog: React.FC = () => {
                             return <p key={idx}>{block.content}</p>;
                         })}
                     </div>
+                    
+                    {/* Giscus Comments */}
+                    <Comments />
                 </article>
-
-                {/* Discussion Section */}
-                <div className="border-t border-zinc-800 pt-12">
-                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <MessageSquare size={20} className="text-indigo-500" />
-                        Join the Discussion
-                    </h3>
-
-                    {/* Dynamic Mock Comments */}
-                    <div className="space-y-6 mb-8">
-                        {activePost.comments && activePost.comments.length > 0 ? (
-                            activePost.comments.map((comment, idx) => (
-                                <div key={idx} className="bg-zinc-950/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800/50">
-                                    <div className="flex gap-4">
-                                        <div className={`w-10 h-10 rounded-full shrink-0 border flex items-center justify-center font-bold text-sm ${comment.avatarColor}`}>
-                                            {comment.initials}
-                                        </div>
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className="font-semibold text-white text-sm">{comment.user}</span>
-                                                <span className="text-xs text-zinc-600 font-mono">{comment.timeAgo}</span>
-                                            </div>
-                                            <p className="text-sm text-zinc-400">
-                                                {comment.content}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <div className="text-zinc-500 text-sm italic">No comments yet. Be the first!</div>
-                        )}
-                    </div>
-
-                    {/* Disabled Input Box */}
-                    <div className="relative group opacity-75">
-                        <textarea 
-                            rows={3}
-                            disabled
-                            placeholder="Log in to join the discussion..."
-                            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-zinc-500 placeholder:text-zinc-600 focus:outline-none resize-none cursor-not-allowed"
-                        />
-                        <button disabled className="absolute bottom-3 right-3 bg-zinc-800 text-zinc-500 text-xs px-4 py-2 rounded-lg font-medium cursor-not-allowed flex items-center gap-2 font-mono uppercase">
-                            <Lock size={12} /> Post Comment
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
       </div>

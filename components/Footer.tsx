@@ -41,8 +41,9 @@ export const Footer: React.FC = () => {
         <div className="text-zinc-500 text-xs">
           © {new Date().getFullYear()} Creatush. All rights reserved.
         </div>
-        <div className="flex gap-6 text-xs text-zinc-600">
+        <div className="flex gap-6 text-xs text-zinc-600 font-mono">
             <button onClick={() => navigate('/privacy')} className="hover:text-zinc-400 transition-colors">Privacy Policy</button>
+            <button onClick={() => navigate('/terms')} className="hover:text-zinc-400 transition-colors">Terms of Use</button>
             <button onClick={() => navigate('/support')} className="hover:text-zinc-400 transition-colors">Support</button>
         </div>
       </div>

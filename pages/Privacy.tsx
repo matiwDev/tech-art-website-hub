@@ -38,10 +38,26 @@ export const Privacy: React.FC = () => {
                 </p>
 
                 <hr className="border-zinc-800 my-8" />
+                
+                <h2 className="text-xl font-bold text-white mb-4">Community Features & Comments</h2>
+                <p className="mb-6 text-zinc-400">
+                    Our blog and community sections use <strong>Giscus</strong>, a comment system powered by GitHub Discussions. 
+                </p>
+                <ul className="list-disc pl-6 space-y-2 mb-6 text-zinc-400">
+                    <li>When you post a comment, you authenticate directly with GitHub.</li>
+                    <li>Creatush does not store your password, authentication tokens, or personal identifiers.</li>
+                    <li>Your comments, username, and avatar are stored and retrieved via the GitHub API.</li>
+                    <li>Please refer to the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:underline">GitHub Privacy Statement</a> for details on how they handle your data.</li>
+                </ul>
 
-                <h2 className="text-xl font-bold text-white mb-4">Website & Communication</h2>
+                <hr className="border-zinc-800 my-8" />
+
+                <h2 className="text-xl font-bold text-white mb-4">Website & Data Transparency</h2>
+                <p className="mb-6 text-zinc-400">
+                    <strong>We do not track, sell, or trade personal visitor data.</strong>
+                </p>
                 <p className="text-zinc-400">
-                    For website inquiries, we only store email addresses provided voluntarily via the contact form for communication purposes. We do not sell, trade, or otherwise transfer your information to outside parties.
+                    For website inquiries, we only store email addresses provided voluntarily via the contact form for the sole purpose of communication. We respect your digital privacy.
                 </p>
             </div>
             
