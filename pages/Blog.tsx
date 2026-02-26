@@ -103,7 +103,7 @@ export const Blog: React.FC = () => {
                     </div>
                     
                     {/* Giscus Comments */}
-                    <Comments />
+                    <Comments key={activePost.id} term={activePost.title} />
                 </article>
             </div>
         </div>
