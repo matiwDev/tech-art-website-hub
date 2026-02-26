@@ -9,7 +9,7 @@ export const Services: React.FC = () => {
   const pricingModels = [
     {
       name: "The Sprint",
-      price: "$100/hr",
+      price: "$80/hr",
       description: "Perfect for rapid troubleshooting, quick shader adjustments, or technical advisory sessions.",
       features: [
         "Code Reviews",
@@ -20,7 +20,7 @@ export const Services: React.FC = () => {
     },
     {
       name: "The Momentum",
-      price: "$550/day",
+      price: "$400/day",
       description: "A dedicated 7-hour block focused on feature implementation, optimization passes, or pipeline building.",
       isPopular: true,
       features: [
