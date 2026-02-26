@@ -14,7 +14,7 @@ export const Comments: React.FC = () => {
     // 2. Create the new Giscus script
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'matiwDev/tech-art-website');
+    script.setAttribute('data-repo', 'matiwDev/tech-art-website-hub');
     script.setAttribute('data-repo-id', 'R_kgDORYj9Jw');
     script.setAttribute('data-category', 'Announcements');
     script.setAttribute('data-category-id', 'DIC_kwDORYj9J84C3MlY');
