@@ -8,20 +8,24 @@ export const Comments: React.FC = () => {
   useEffect(() => {
     if (!commentsRef.current) return;
 
-    // Reset container
+    // 1. Clear the container
     commentsRef.current.innerHTML = '';
 
+    // 2. Create the script
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'matiwDev/tech-art-website');
-    script.setAttribute('data-repo-id', 'R_kgDORYj9Jw');
+    
+    // UPDATED REPO NAME
+    script.setAttribute('data-repo', 'matiwDev/tech-art-website-hub');
+    
+    // !!! IMPORTANT: PASTE YOUR NEW IDs FROM THE GISCUS WEBSITE HERE !!!
+    script.setAttribute('data-repo-id', 'R_kgDORYn24w');
     script.setAttribute('data-category', 'Announcements');
-    script.setAttribute('data-category-id', 'DIC_kwDORYj9J84C3MlY');
+    script.setAttribute('data-category-id', 'DIC_kwDORYn2484C3LrA');
     
-    // SWITCHED TO TITLE MAPPING
-    script.setAttribute('data-mapping', 'title'); 
-    script.setAttribute('data-strict', '1');
-    
+    // Use 'pathname' - it's the cleanest if your URLs are distinct
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'top');
@@ -30,10 +34,10 @@ export const Comments: React.FC = () => {
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
+    // 3. Append to ref
     commentsRef.current.appendChild(script);
-    
-    console.log("Giscus reloading for path:", location.pathname);
-  }, [location.pathname, location.search]); // Watches for path and query changes
+
+  }, [location.pathname]); // Forces refresh on navigation
 
   return (
     <div className="w-full mt-12 pt-8 border-t border-zinc-800">
