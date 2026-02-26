@@ -1,30 +1,28 @@
 import React, { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 
-export const Comments: React.FC = () => {
+interface CommentsProps {
+  term: string; // This will be the unique title of your blog post
+}
+
+export const Comments: React.FC<CommentsProps> = ({ term }) => {
   const commentsRef = useRef<HTMLDivElement>(null);
-  const location = useLocation();
 
   useEffect(() => {
     if (!commentsRef.current) return;
 
-    // 1. Clear the container
     commentsRef.current.innerHTML = '';
 
-    // 2. Create the script
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    
-    // UPDATED REPO NAME
     script.setAttribute('data-repo', 'matiwDev/tech-art-website-hub');
-    
-    // !!! IMPORTANT: PASTE YOUR NEW IDs FROM THE GISCUS WEBSITE HERE !!!
-    script.setAttribute('data-repo-id', 'R_kgDORYn24w');
+    script.setAttribute('data-repo-id', 'R_kgDORYn24w'); // Ensure this is your -hub ID
     script.setAttribute('data-category', 'Announcements');
-    script.setAttribute('data-category-id', 'DIC_kwDORYn2484C3LrA');
+    script.setAttribute('data-category-id', 'DIC_kwDORYn2484C3LrA'); // Ensure this is your -hub ID
     
-    // Use 'pathname' - it's the cleanest if your URLs are distinct
-    script.setAttribute('data-mapping', 'pathname');
+    // THE FIX: Use 'specific' mapping and pass the term
+    script.setAttribute('data-mapping', 'specific');
+    script.setAttribute('data-term', term); 
+    
     script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
@@ -34,10 +32,8 @@ export const Comments: React.FC = () => {
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
-    // 3. Append to ref
     commentsRef.current.appendChild(script);
-
-  }, [location.pathname]); // Forces refresh on navigation
+  }, [term]); // Reloads whenever the 'term' (post title) changes
 
   return (
     <div className="w-full mt-12 pt-8 border-t border-zinc-800">
