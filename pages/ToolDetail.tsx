@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Rocket, Cpu, Construction } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { toolsData } from '../data/toolsData';
+import { Comments } from '../components/Comments';
+import { ToolImage } from '../components/ToolImage';
 
 export const ToolDetail: React.FC = () => {
   const { toolId } = useParams();
@@ -47,21 +49,12 @@ export const ToolDetail: React.FC = () => {
         {hasContent ? (
             /* Modular Content Blocks */
             <div className="space-y-32">
-                {data.contentBlocks?.map((block, idx) => (
-                    <div key={idx} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-                        {/* Visual Column */}
-                        <div className={`relative group ${block.layout === 'image-right' ? 'md:order-2' : 'md:order-1'}`}>
-                            <div className={`absolute inset-0 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity ${idx % 2 === 0 ? 'bg-indigo-500/20' : 'bg-purple-500/20'}`}></div>
-                            <img 
-                                src={block.visual} 
-                                alt={block.title || "Tool Visualization"} 
-                                className="relative rounded-2xl border border-zinc-800 shadow-2xl w-full object-cover aspect-[4/3] bg-zinc-900" 
-                            />
-                        </div>
-                        
-                        {/* Text Column */}
-                        <div className={`space-y-6 ${block.layout === 'image-right' ? 'md:order-1' : 'md:order-2'}`}>
-                            {block.title && <h2 className="text-3xl font-bold text-white">{block.title}</h2>}
+                {data.contentBlocks?.map((block, idx) => {
+                    const isEditorial = block.layout === 'float-left' || block.layout === 'float-right';
+
+                    const renderBlockContent = () => (
+                        <>
+                            {block.title && <h2 className="text-3xl font-bold text-white mb-6">{block.title}</h2>}
                             
                             {/* Paragraphs Render */}
                             {block.bodyType === 'paragraphs' && (
@@ -87,7 +80,7 @@ export const ToolDetail: React.FC = () => {
 
                              {/* Technical List Render */}
                             {block.bodyType === 'technical-list' && (
-                                <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 font-mono text-sm text-indigo-300 shadow-inner">
+                                <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 font-mono text-sm text-indigo-300 shadow-inner mt-6">
                                     <ul className="space-y-2">
                                         {block.text.map((item, tIdx) => (
                                             <li key={tIdx} className="flex gap-4">
@@ -98,9 +91,46 @@ export const ToolDetail: React.FC = () => {
                                     </ul>
                                 </div>
                             )}
+                        </>
+                    );
+
+                    if (isEditorial) {
+                        return (
+                            <div key={idx} className="clear-both overflow-hidden">
+                                <div className={`relative group ${block.layout === 'float-left' ? 'float-left mr-6 mb-4' : 'float-right ml-6 mb-4'} max-w-[40%]`}>
+                                    <div className={`absolute inset-0 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity ${idx % 2 === 0 ? 'bg-indigo-500/20' : 'bg-purple-500/20'}`}></div>
+                                    <ToolImage 
+                                        src={block.visual} 
+                                        alt={block.title || "Tool Visualization"} 
+                                        layout={block.imageLayout}
+                                    />
+                                </div>
+                                <div className="space-y-6">
+                                    {renderBlockContent()}
+                                </div>
+                            </div>
+                        );
+                    }
+
+                    return (
+                        <div key={idx} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center clear-both">
+                            {/* Visual Column */}
+                            <div className={`relative group ${block.layout === 'image-right' ? 'md:order-2' : 'md:order-1'}`}>
+                                <div className={`absolute inset-0 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity ${idx % 2 === 0 ? 'bg-indigo-500/20' : 'bg-purple-500/20'}`}></div>
+                                <ToolImage 
+                                    src={block.visual} 
+                                    alt={block.title || "Tool Visualization"} 
+                                    layout={block.imageLayout}
+                                />
+                            </div>
+                            
+                            {/* Text Column */}
+                            <div className={`space-y-6 ${block.layout === 'image-right' ? 'md:order-1' : 'md:order-2'}`}>
+                                {renderBlockContent()}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         ) : (
             /* Coming Soon / Empty State */
@@ -154,6 +184,8 @@ export const ToolDetail: React.FC = () => {
                 </Button>
             </div>
         )}
+
+        <Comments key={data.name} term={data.name} />
 
       </div>
     </div>

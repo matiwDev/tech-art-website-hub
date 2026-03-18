@@ -327,6 +327,68 @@ return face + glow * mask;` },
     ]
   },
   {
+    id: 'psd-importer-roadmap',
+    title: 'PSD Importer: Roadmap',
+    date: 'Dec 27, 2025',
+    category: 'DevLog',
+    proTip: "Don't waste draw calls. Use the Importer to pack four grayscale PSD layers (Metalness, Smoothness, AO, Height) into a single RGBA 'Mask Map.' This allows your shaders to read four textures while only hitting the GPU memory for one.",
+    blocks: [
+      { type: 'paragraph', content: 'A non-destructive bridge that treats Photoshop layers as intelligent data, not just raw pixels.' },
+      { type: 'heading', content: 'Milestone 1: Precision Pipeline' },
+      { type: 'list', content: [
+        'Smart Pivot Retention: Automatically calculates and locks pivots based on Photoshop layer groups, ensuring UI elements do not "jump" when the source file is updated.',
+        'The Layer Inspector: A dedicated Unity window to preview PSD layers and toggle visibility/import settings before bringing them into the project.',
+        'Non-Destructive Re-import: Update the .psd and see the changes reflect in your Unity Prefabs without losing attached components or logic.',
+      ]},
+      { type: 'heading', content: 'Milestone 2: Technical Art & Channel Packing' },
+      { type: 'list', content: [
+        'Auto-Channel Packer: Select grayscale layers in Photoshop and have the importer output a single optimized RGBA texture for custom shaders.',
+        'Sprite Sheet Generator: Convert Photoshop "Frame" groups into optimized, packed Sprite Sheets with automatic padding and bleed handling.',
+        'VFX Layer Tags: Tag layers for automatic conversion into Particle System textures or Bloom-ready emissive materials.'
+      ]},
+      { type: 'heading', content: 'Milestone 3: Automation & UI Generation' },
+      { type: 'list', content: [
+        'UI Canvas Auto-Builder: Import a PSD and have the tool automatically generate a RectTransform hierarchy (Buttons, Images, Text) based on layer name tags.',
+        'Batch Processing: Monitor a "Source" folder; whenever a designer saves a PSD, the tool automatically re-imports and updates the Unity project in the background.'
+      ]},
+    ],
+    comments: [
+        { user: "MotionMan", initials: "MM", timeAgo: "3 hours ago", content: "Finally a spline editor! Hand-coding bezier curves was getting old.", avatarColor: "text-blue-400 border-blue-500/20 bg-blue-900/20" },
+        { user: "GarbageCollector", initials: "GC", timeAgo: "1 day ago", content: "Zero allocation is the dream. Can't wait for the pooling update.", avatarColor: "text-green-400 border-green-500/20 bg-green-900/20" }
+    ]
+  },
+  {
+    id: 'project-architecture-roadmap',
+    title: 'Project Architect: Roadmap',
+    date: 'Feb 23, 2026',
+    category: 'DevLog',
+    proTip: "Folder structure isn't just about organization; it's about Compilation Optimization. By isolating your Art, Core, and UI modules into separate Assembly Definitions via the Architect, you can reduce Unity's script compilation time by up to 60% in mid-to-large projects.",
+    blocks: [
+      { type: 'paragraph', content: 'A unified structural engine that transforms project chaos into automated, high-performance folder hierarchies.' },
+      { type: 'heading', content: 'Milestone 1: Professional Foundation' },
+      { type: 'list', content: [
+        'The Blueprint Engine: A ScriptableObject-based template system that generates your entire folder structure (Art, Scripts, Prefabs) with one click for new modules.',
+        'Naming Convention Validator: A background tool that flags any asset not following specific prefix rules (e.g., T_ for Textures, SM_ for Static Meshes) before they are committed to Version Control.',
+        'Assembly Definition (AsmDef) Wizard: Automatically generates and links AsmDefs for new folders to keep your compile times lightning-fast.',
+      ]},
+      { type: 'heading', content: 'Milestone 2: Data & Logic Integrity' },
+      { type: 'list', content: [
+        'Namespace Automator: Automatically wraps new scripts in the correct folder-based namespace to prevent naming collisions and enforce clean code standards.',
+        'Dependency Ghost Hunter: A visual tool to find "Broken References" or "Missing Scripts" across the entire project without opening every individual prefab.',
+        'Empty Folder Purge: A smart utility to identify and remove "ghost" directories that clutter the Project window and meta-file history.'
+      ]},
+      { type: 'heading', content: 'Milestone 3: CI/CD & Build Validation' },
+      { type: 'list', content: [
+        'The "Build Ready" Auditor: A pre-build checklist that automatically strips debug logs and validates build size before you hit the "Build" button.',
+        'Headless Validation: Integration for GitHub Actions to ensure no "forbidden" assets (like 8K textures or uncompressed wavs) enter the main branch.'
+      ]},
+    ],
+    comments: [
+        { user: "MotionMan", initials: "MM", timeAgo: "3 hours ago", content: "Finally a spline editor! Hand-coding bezier curves was getting old.", avatarColor: "text-blue-400 border-blue-500/20 bg-blue-900/20" },
+        { user: "GarbageCollector", initials: "GC", timeAgo: "1 day ago", content: "Zero allocation is the dream. Can't wait for the pooling update.", avatarColor: "text-green-400 border-green-500/20 bg-green-900/20" }
+    ]
+  },
+  {
     id: 'shader-vs-texture',
     title: 'ALU vs Bandwidth: Balancing the GPU',
     date: 'Nov 22, 2025',

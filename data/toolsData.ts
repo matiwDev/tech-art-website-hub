@@ -1,8 +1,9 @@
 import { Zap, Layers, RefreshCw, Bookmark, DraftingCompass, FileImage, LucideIcon, Code2 } from 'lucide-react';
 
 export interface ContentBlock {
-  layout: 'image-left' | 'image-right';
-  visual: string; // URL for Image or Video
+  layout: 'image-left' | 'image-right' | 'float-left' | 'float-right';
+  imageLayout?: 'full' | 'portrait' | 'side-by-side';
+  visual: string | string[]; // URL for Image or Video
   title?: string;
   bodyType: 'paragraphs' | 'bullets' | 'technical-list';
   text: string[];
@@ -36,9 +37,9 @@ export const toolsData: Tool[] = [
     icon: Zap,
     status: 'Active',
     specs: [
-      { label: 'Size', value: '14KB' },
+      { label: 'Size', value: '126.2 KB' },
       { label: 'Platform', value: 'Unity 2021+' },
-      { label: 'Allocations', value: 'Zero (Runtime)' },
+      { label: 'Updated', value: '03-03-2026' },
       { label: 'License', value: 'MIT' }
     ],
     contentBlocks: [
@@ -63,7 +64,7 @@ export const toolsData: Tool[] = [
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/'
+    storeLink: 'https://assetstore.unity.com/packages/slug/366674'
   },
   {
     id: 'tween-vfx-pro',
@@ -140,28 +141,64 @@ export const toolsData: Tool[] = [
   {
     id: 'anim-sync',
     name: 'Animation Synchronizer',
-    version: '0.9.8',
+    version: '1.0.0',
     category: 'Utility',
-    description: 'Seamlessly synchronize animator states across networked clients. Supports Photon, Mirror, and Netcode for GameObjects.',
+    description: 'Animation Synchronizer is an Editor tool built for Technical Artists and Animators who need to fine-tune the timing of complex sequences without constantly entering Play mode.',
     icon: RefreshCw,
-    status: 'Development',
+    status: 'Active',
     specs: [
-        { label: 'Network', value: 'Agnostic' },
-        { label: 'Compression', value: 'Bit-packing' },
-        { label: 'Setup', value: 'Component-based' }
+        { label: 'Size', value: '3.4 MB' },
+        { label: 'Platform', value: 'Unity 2021+' },
+        { label: 'Render Pipelines', value: 'All' },
+        { label: 'Dependencies', value: 'None' }
     ],
     contentBlocks: [
         {
             layout: 'image-left',
-            visual: 'https://picsum.photos/800/600?random=105',
-            title: 'Deterministic Sync',
+            visual: 'https://lh3.googleusercontent.com/u/0/d/1An7xXe5w0iUIS_LPMEqsiaWZpienz8VW',
+            title: 'What it does',
             bodyType: 'paragraphs',
             text: [
-                'Ensures that animation playback is frame-perfect across all connected clients, compensating for latency and packet loss using predictive algorithms.'
+                'Drive any number of Animators simultaneously from a single shared timeline. Each clip has an independent start offset (delay) so you can stagger them across the sequence. Looping clips wrap seamlessly for as long as the sequence runs. Non-looping clips hold their last frame. Clips waiting for their offset to be reached hold frame zero, no T-pose surprises.',
+                'Particle Systems can be added to the timeline with one click. The tool scrubs them deterministically to any frame and advances them in real-time lockstep with your animations during playback.',
+                'No Play mode. No baked data. No scene pollution. When you close the tool, your scene is exactly as you left it.'
+            ]
+        },
+        {
+            layout: 'float-right',
+            visual: 'https://lh3.googleusercontent.com/u/0/d/1iOl_udNt65IfoDNdGluFkewqF06xdqWi',
+            title: 'Transport & Timeline',
+            bodyType: 'bullets',
+            text: [
+                'Visual timeline with colour-coded clip bars and a draggable playhead',
+                'Full transport bar: Go to Start, Step Back, Play/Pause, Step Forward, Go to End',
+                'Frame-accurate scrubbing —> click or drag anywhere on the timeline',
+                'Loop toggle for the full sequence',
+                'Variable playback speed from −4× to +4× (reverse included)',
+                'Live status badge: PLAYING / PAUSED / STOPPED'
+            ]
+        },
+        {
+            layout: 'float-right',
+            visual: 'https://lh3.googleusercontent.com/u/0/d/1EE3hh1ew91FGn_7Ewyb_dW2jyF2NVDZo',
+            title: 'Features at Glance',
+            bodyType: 'bullets',
+            text: [
+                'Synchronize unlimited Animator components on a shared frame timeline',
+                'Per-clip start offset (delay) in frames',
+                'Correct looping —> clips flagged isLooping wrap for the full sequence duration',
+                'Clips hold frame 0 before their offset is reached (no T-pose artifacts)',
+                'Optional Particle System synchronization with auto scene scan',
+                'Deterministic particle scrubbing to any frame',
+                'Real-time particle advancement during playback',
+                'Reverse playback for animators (particles show a warning)',
+                'Domain-reload safe —> survives script compilation without losing state',
+                'Zero scene pollution —> AnimationMode API, nothing baked or saved',
+                'No runtime footprint —> excluded from builds automatically'
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/'
+    storeLink: 'https://assetstore.unity.com/packages/slug/367928'
   },
   {
     id: 'bookmarks',
@@ -170,7 +207,7 @@ export const toolsData: Tool[] = [
     category: 'Utility',
     description: 'A productivity booster for level designers. Save and recall Scene View camera positions with customizable hotkeys.',
     icon: Bookmark,
-    status: 'Development',
+    status: 'Active',
     specs: [
         { label: 'Type', value: 'Editor Extension' },
         { label: 'Storage', value: 'Local/Shared' }
