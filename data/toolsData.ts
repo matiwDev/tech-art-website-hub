@@ -209,8 +209,10 @@ export const toolsData: Tool[] = [
     icon: Bookmark,
     status: 'Active',
     specs: [
-        { label: 'Type', value: 'Editor Extension' },
-        { label: 'Storage', value: 'Local/Shared' }
+        { label: 'Size', value: '236.1 KB' },
+        { label: 'Platform', value: 'Unity 2021+' },
+        { label: 'Dependencies', value: 'None' },
+        { label: 'License', value: 'MIT' }
     ],
     contentBlocks: [
         {
@@ -231,7 +233,9 @@ export const toolsData: Tool[] = [
             text: [
                 'Profiles let you maintain completely separate bookmark sets for different disciplines or workflow phases — switch between Art, Gameplay, and Audio contexts in a single click, each backed by its own JSON file. A rolling Recent Assets panel passively tracks the last 15 assets you selected in the Project window, so anything you have touched recently is one click away from becoming a permanent bookmark. Press Ctrl+Shift+B at any time to bookmark your current Project selection without even opening the window. And your bookmarks are automatically saved to JSON every time you enter Play Mode, so nothing is ever lost mid-session.',
                 'When an asset is deleted, Asset Bookmarks shows a named red warning row instead of silently removing it — so you always know when something disappears from your workflow. Clean it up on your own terms with a single Purge command.',
-                'Built entirely on Unity\'s native Editor APIs with no external dependencies, a dedicated assembly definition, and a clean Creatush.AssetBookmarks namespace — ready to drop into any project without conflicts.'
+                'Built entirely on Unity\'s native Editor APIs with no external dependencies, a dedicated assembly definition, and a clean Creatush.AssetBookmarks namespace — ready to drop into any project without conflicts.',
+                'Auto mode is where most people will spend the majority of their time, and for good reason — it simply works. The moment you drop an asset onto the window, the tool reads its file extension and routes it to the correct category without you having to think about it. A .unity file goes straight to Scenes, a .prefab to Prefabs, a .cs to Scripts, and so on across thirty-plus supported extensions. For developers who are in a flow state and just want to bookmark things quickly without breaking their concentration, Auto mode is completely frictionless — drag, drop, done.',
+                'Manual mode is where the tool reveals a different kind of power, the power of intent. When you drop assets in Manual mode, the tool pauses and presents a category picker, letting you route a prefab to a custom \"Level Pieces\" category instead of the generic Prefabs bucket, or create a brand new category on the spot without leaving your flow. Beyond how assets arrive, you also control how they sit once they\'re there — drag items up and down within a category to establish your own priority order, or hit \"Sort All Alphabetically\" from the Settings menu to sweep through every category at once. Between the two modes and these sorting options, the tool adapts to however your brain prefers to organize, whether that\'s structured and deliberate or fast and instinctive.'
             ]
         }
     ],
