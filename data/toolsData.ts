@@ -205,7 +205,7 @@ export const toolsData: Tool[] = [
     name: 'The Bookmarks',
     version: '1.0.2',
     category: 'Utility',
-    description: 'A productivity booster for level designers. Save and recall Scene View camera positions with customizable hotkeys.',
+    description: 'Stop hunting through your project. Bookmark any asset in one drag — organized, color-coded, and always one click away.',
     icon: Bookmark,
     status: 'Active',
     specs: [
@@ -214,16 +214,28 @@ export const toolsData: Tool[] = [
     ],
     contentBlocks: [
         {
-            layout: 'image-right',
-            visual: 'https://picsum.photos/800/600?random=106',
-            title: 'Workflow Acceleration',
+            layout: 'float-right',
+            visual: 'https://lh3.googleusercontent.com/u/0/d/1OqI6SkBo3B5_FVDtp39XqD6LnXQcr2jd',
+            title: 'Professional-grade Unity Editor tool',
             bodyType: 'paragraphs',
             text: [
-                'Navigate massive open worlds instantly. Share interesting camera angles with your team via git-friendly config files.'
+                'The Asset Bookmarks brings order to large, complex projects. Instead of endlessly scrolling the Project window or relying on search to find assets you use every day, you bookmark them once and have them permanently at your fingertips in a clean, dockable window.',
+                'Drop any asset onto the window and it is instantly sorted into the right category — Scenes, Prefabs, Scripts, Materials, Textures, and more — or choose your own. Color-label assets to signal priority or ownership. Pin your most critical files to a dedicated panel that is always visible at the top. Add inline notes to leave context for yourself or your team. Search across every category simultaneously as you type.'
+            ]
+        },
+        {
+            layout: 'float-right',
+            visual: 'https://lh3.googleusercontent.com/u/0/d/1Cl5ZByI7It9_Ycyt7kehGrXdKQtHaO8q',
+            title: 'Your Asset Command Center',
+            bodyType: 'paragraphs',
+            text: [
+                'Profiles let you maintain completely separate bookmark sets for different disciplines or workflow phases — switch between Art, Gameplay, and Audio contexts in a single click, each backed by its own JSON file. A rolling Recent Assets panel passively tracks the last 15 assets you selected in the Project window, so anything you have touched recently is one click away from becoming a permanent bookmark. Press Ctrl+Shift+B at any time to bookmark your current Project selection without even opening the window. And your bookmarks are automatically saved to JSON every time you enter Play Mode, so nothing is ever lost mid-session.',
+                'When an asset is deleted, Asset Bookmarks shows a named red warning row instead of silently removing it — so you always know when something disappears from your workflow. Clean it up on your own terms with a single Purge command.',
+                'Built entirely on Unity\'s native Editor APIs with no external dependencies, a dedicated assembly definition, and a clean Creatush.AssetBookmarks namespace — ready to drop into any project without conflicts.'
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/'
+    storeLink: 'https://assetstore.unity.com/packages/slug/368714'
   },
   {
     id: 'project-architect',
