@@ -24,7 +24,7 @@ export const Blog: React.FC = () => {
             <div className="w-full lg:w-1/4 shrink-0">
                 {/* Mobile Selector */}
                 <div className="lg:hidden mb-8">
-                    <label className="text-sm text-zinc-500 mb-2 block font-medium font-mono">SELECT TOPIC</label>
+                    <label className="text-sm text-zinc-500 mb-2 block font-medium ">SELECT TOPIC</label>
                     <div className="relative">
                         <select 
                             value={activePostId}
@@ -53,7 +53,7 @@ export const Blog: React.FC = () => {
                                 : 'bg-transparent border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/30'
                             }`}
                         >
-                            <span className={`text-xs font-mono mb-1 block transition-colors uppercase ${activePostId === post.id ? 'text-indigo-400' : 'text-zinc-600 group-hover:text-zinc-400'}`}>{post.category}</span>
+                            <span className={`text-xs mb-1 block transition-colors uppercase ${activePostId === post.id ? 'text-indigo-400' : 'text-zinc-600 group-hover:text-zinc-400'}`}>{post.category}</span>
                             <span className="font-medium leading-snug block text-sm">{post.title}</span>
                         </button>
                     ))}
@@ -63,7 +63,7 @@ export const Blog: React.FC = () => {
             {/* Content Area */}
             <div className="flex-grow max-w-3xl">
                 <article className="bg-zinc-900/20 backdrop-blur-xl border border-zinc-800/50 rounded-3xl p-8 md:p-12 mb-12 min-h-[500px]">
-                    <div className="flex items-center gap-4 text-sm text-zinc-500 mb-8 border-b border-zinc-800 pb-6 font-mono">
+                    <div className="flex items-center gap-4 text-sm text-zinc-500 mb-8 border-b border-zinc-800 pb-6">
                         <span className="flex items-center gap-2"><Calendar size={14} /> {activePost.date}</span>
                         <span className="flex items-center gap-2 px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/50 text-xs"><Tag size={12} /> {activePost.category}</span>
                     </div>
@@ -76,7 +76,7 @@ export const Blog: React.FC = () => {
                                 <Lightbulb size={20} />
                             </div>
                             <div>
-                                <h4 className="text-indigo-300 font-bold text-sm uppercase tracking-wide mb-1 font-mono">Pro Tip</h4>
+                                <h4 className="text-indigo-300 font-bold text-sm uppercase tracking-wide mb-1">Pro Tip</h4>
                                 <p className="text-indigo-100/90 text-sm italic">
                                     "{activePost.proTip}"
                                 </p>
@@ -89,7 +89,7 @@ export const Blog: React.FC = () => {
                             if (block.type === 'heading') return <h3 key={idx} className="text-2xl font-bold text-white mt-10 mb-2 border-l-4 border-indigo-500 pl-4">{block.content}</h3>;
                             if (block.type === 'subheading') return <h4 key={idx} className="text-xl font-semibold text-zinc-100 mt-8 mb-2">{block.content}</h4>;
                             if (block.type === 'code') return (
-                                <div key={idx} className="bg-zinc-950 border border-zinc-800 rounded-lg p-5 font-mono text-sm overflow-x-auto my-6 text-indigo-300 shadow-inner">
+                                <div key={idx} className="bg-zinc-950 border border-zinc-800 rounded-lg p-5 text-sm overflow-x-auto my-6 text-indigo-300 shadow-inner">
                                     <pre>{block.content}</pre>
                                 </div>
                             );

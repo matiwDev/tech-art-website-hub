@@ -22,7 +22,7 @@ export const Work: React.FC = () => {
               Each piece represents a fusion of technology and art.
             </p>
           </div>
-          <div className="flex gap-4 text-sm text-zinc-400">
+          <div className="flex gap-4 text-sm text-zinc-400 font-sansation">
             <button className="text-white border-b border-white pb-1">All</button>
             <button className="hover:text-white transition-colors pb-1">3D</button>
             <button className="hover:text-white transition-colors pb-1">Interface</button>
@@ -48,7 +48,7 @@ export const Work: React.FC = () => {
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-indigo-400 text-xs font-mono mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.category}</span>
+                <span className="text-indigo-400 text-xs  mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.category}</span>
                 <div className="flex justify-between items-center translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                   <h3 className="text-xl font-bold text-white">{project.title}</h3>
                   <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">

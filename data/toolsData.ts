@@ -24,7 +24,12 @@ export interface Tool {
   status: 'Active' | 'Development';
   specs: ToolSpec[];
   contentBlocks: ContentBlock[];
-  storeLink: string;
+  gitUrl: string;
+  downloadUrl: string;
+  isPro: boolean;
+  price: string;
+  purchaseUrl: string;
+  videoUrl?: string;
 }
 
 export const toolsData: Tool[] = [
@@ -64,7 +69,12 @@ export const toolsData: Tool[] = [
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/packages/slug/366674'
+    gitUrl: 'https://github.com/matiwDev/TweenVFXsBase.git',
+    downloadUrl: 'https://drive.google.com/drive/folders/15uiZzpnhqNRhDYDAphvFLCwhSEZxWwTp',
+    isPro: false,
+    price: '$0',
+    purchaseUrl: '',
+    videoUrl: 'https://www.youtube.com/watch?v=jowabFCIzqI'
   },
   {
     id: 'tween-vfx-pro',
@@ -136,7 +146,12 @@ export const toolsData: Tool[] = [
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/'
+    gitUrl: 'INSERT_GIT_URL_HERE',
+    downloadUrl: 'INSERT_DOWNLOAD_URL_HERE',
+    isPro: true,
+    price: '$25',
+    purchaseUrl: 'https://polar.sh/creatush/tween-vfx-pro',
+    videoUrl: ''
   },
   {
     id: 'anim-sync',
@@ -198,7 +213,12 @@ export const toolsData: Tool[] = [
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/packages/slug/367928'
+    gitUrl: 'INSERT_GIT_URL_HERE',
+    downloadUrl: 'INSERT_DOWNLOAD_URL_HERE',
+    isPro: true,
+    price: '$25',
+    purchaseUrl: 'https://buy.polar.sh/polar_cl_eZYXO6b65FXPCLQIzS6utjHSDe7MiFlQ3ct4r18bG5T',
+    videoUrl: 'https://www.youtube.com/watch?v=StZCMQUxK-4'
   },
   {
     id: 'bookmarks',
@@ -213,6 +233,7 @@ export const toolsData: Tool[] = [
         { label: 'Platform', value: 'Unity 2021+' },
         { label: 'Dependencies', value: 'None' },
         { label: 'License', value: 'MIT' }
+
     ],
     contentBlocks: [
         {
@@ -239,7 +260,12 @@ export const toolsData: Tool[] = [
             ]
         }
     ],
-    storeLink: 'https://assetstore.unity.com/packages/slug/368714'
+    gitUrl: 'https://github.com/matiwDev/Bookmarks.git',
+    downloadUrl: 'https://drive.google.com/drive/folders/1fUUPhAiVtz98vkUFB8ddfFpQSR2HCOBb?usp=sharing',
+    isPro: false,
+    price: '$0',
+    purchaseUrl: '',
+    videoUrl: 'https://www.youtube.com/watch?v=ryHC16DHF10'
   },
   {
     id: 'project-architect',
@@ -251,7 +277,12 @@ export const toolsData: Tool[] = [
     status: 'Development',
     specs: [],
     contentBlocks: [],
-    storeLink: 'https://assetstore.unity.com/'
+    gitUrl: 'INSERT_GIT_URL_HERE',
+    downloadUrl: 'INSERT_DOWNLOAD_URL_HERE',
+    isPro: true,
+    price: '$15',
+    purchaseUrl: 'https://polar.sh/creatush/project-architect',
+    videoUrl: ''
   },
   {
     id: 'psd-importer',
@@ -263,6 +294,11 @@ export const toolsData: Tool[] = [
     status: 'Development',
     specs: [],
     contentBlocks: [],
-    storeLink: 'https://assetstore.unity.com/'
+    gitUrl: 'INSERT_GIT_URL_HERE',
+    downloadUrl: 'INSERT_DOWNLOAD_URL_HERE',
+    isPro: false,
+    price: '$0',
+    purchaseUrl: '',
+    videoUrl: ''
   }
 ];

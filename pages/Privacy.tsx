@@ -17,7 +17,7 @@ export const Privacy: React.FC = () => {
 
         <div className="flex items-center gap-3 mb-6">
             <ShieldCheck className="text-indigo-500" size={32} />
-            <h1 className="text-4xl font-bold text-white">Privacy Policy</h1>
+            <h1 className="text-4xl font-bold text-white font-sansation">Privacy Policy</h1>
         </div>
         
         <div className="space-y-8 text-zinc-300 leading-relaxed animate-fade-in-up">
@@ -25,21 +25,21 @@ export const Privacy: React.FC = () => {
                 {/* Decoration */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 rounded-bl-full pointer-events-none"></div>
 
-                <h2 className="text-xl font-bold text-white mb-4">Data Minimalism</h2>
+                <h2 className="text-xl font-bold text-white mb-4 font-sansation">Data Minimalism</h2>
                 <p className="mb-6 text-zinc-400">
                     At Creatush, we prioritize data minimalism. We believe developer tools should be tools, not tracking devices.
                 </p>
                 
                 <hr className="border-zinc-800 my-8" />
 
-                <h2 className="text-xl font-bold text-white mb-4">Tool Usage Data</h2>
+                <h2 className="text-xl font-bold text-white mb-4 font-sansation">Tool Usage Data</h2>
                 <p className="mb-6 text-zinc-400">
                     <strong>Creatush does not collect personal data from our tools.</strong> When you install or use our Unity packages, SDKs, or Editor Extensions, no telemetry data, usage statistics, source code analysis, or personal identifiers are sent to our servers. Your project data remains entirely on your local machine.
                 </p>
 
                 <hr className="border-zinc-800 my-8" />
                 
-                <h2 className="text-xl font-bold text-white mb-4">Community Features & Comments</h2>
+                <h2 className="text-xl font-bold text-white mb-4 font-sansation">Community Features & Comments</h2>
                 <p className="mb-6 text-zinc-400">
                     Our blog and community sections use <strong>Giscus</strong>, a comment system powered by GitHub Discussions. 
                 </p>
@@ -52,7 +52,7 @@ export const Privacy: React.FC = () => {
 
                 <hr className="border-zinc-800 my-8" />
 
-                <h2 className="text-xl font-bold text-white mb-4">Website & Data Transparency</h2>
+                <h2 className="text-xl font-bold text-white mb-4 font-sansation">Website & Data Transparency</h2>
                 <p className="mb-6 text-zinc-400">
                     <strong>We do not track, sell, or trade personal visitor data.</strong>
                 </p>
@@ -61,7 +61,7 @@ export const Privacy: React.FC = () => {
                 </p>
             </div>
             
-            <div className="text-xs text-zinc-600 font-mono text-center">
+            <div className="text-xs text-zinc-600  text-center">
                 Last Updated: February 2026
             </div>
         </div>

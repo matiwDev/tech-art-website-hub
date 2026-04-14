@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code, Layers, Rocket, Users, ExternalLink, BookOpen, Search, Cpu, DraftingCompass } from 'lucide-react';
+import { ArrowRight, Code, Layers, Rocket, Users, ExternalLink, BookOpen, Search, Cpu, DraftingCompass, Coffee, Heart } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+
+import { SupportCard } from '../components/SupportCard';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -121,7 +123,7 @@ export const Home: React.FC = () => {
                   />
                 </div>
                 <div className="flex justify-end mt-2">
-                   <span className="text-xs text-zinc-500 font-mono">{step.progress}% Complete</span>
+                   <span className="text-xs text-zinc-500 ">{step.progress}% Complete</span>
                 </div>
               </div>
             ))}
@@ -178,7 +180,7 @@ export const Home: React.FC = () => {
                 {/* Right Side: Bio */}
                 <div>
                     <div className="inline-block px-3 py-1 mb-6 border border-zinc-800 rounded-full bg-zinc-900/50 backdrop-blur-sm">
-                        <span className="text-xs font-mono text-indigo-400 tracking-wider uppercase">The Architect</span>
+                        <span className="text-xs text-indigo-400 tracking-wider uppercase">The Architect</span>
                     </div>
                     
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
@@ -195,7 +197,7 @@ export const Home: React.FC = () => {
                     </p>
 
                     {/* Technical Touch List */}
-                    <div className="bg-zinc-900/30 border border-zinc-800 rounded-xl p-6 font-mono text-sm space-y-3">
+                    <div className="bg-zinc-900/30 border border-zinc-800 rounded-xl p-6 text-sm space-y-3">
                         <div className="flex items-center gap-4">
                             <span className="text-zinc-500 w-32 shrink-0">Current Focus:</span>
                             <span className="text-indigo-300">AI Workflow Integration</span>
@@ -213,6 +215,8 @@ export const Home: React.FC = () => {
             </div>
          </div>
       </section>
+
+      <SupportCard />
     </div>
   );
 };

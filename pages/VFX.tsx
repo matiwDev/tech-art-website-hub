@@ -21,7 +21,7 @@ const MediaPlaceholder: React.FC<{ text: string }> = ({ text }) => (
      
      {/* Text Content */}
      <div className="relative z-10 flex flex-col items-center gap-2">
-         <span className="font-mono text-[10px] text-purple-500/50 animate-pulse tracking-[0.2em] uppercase">
+         <span className=" text-[10px] text-purple-500/50 animate-pulse tracking-[0.2em] uppercase">
            {text}
          </span>
      </div>
@@ -90,7 +90,7 @@ const VFXCard: React.FC<{ project: VFXProject }> = ({ project }) => {
             {/* 4. Content Overlay (Hover Effect) - Disabled on Error */}
             {status !== 'error' && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 z-30">
-                    <span className="text-indigo-400 text-xs font-mono mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
+                    <span className="text-indigo-400 text-xs mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
                         {project.category === 'Shaders' ? <Box size={12} /> : <Sparkles size={12} />}
                         {project.category.toUpperCase()}
                     </span>
@@ -144,7 +144,7 @@ export const VFX: React.FC = () => {
                     <button
                         key={f}
                         onClick={() => setFilter(f)}
-                        className={`px-6 py-2 rounded-full text-sm font-medium font-mono transition-all duration-300 ${
+                        className={`px-6 py-2 rounded-full text-sm font-medium font-sansation transition-all duration-300 ${
                             filter === f 
                             ? 'bg-zinc-800 text-white shadow-[0_0_15px_rgba(99,102,241,0.15)] border border-indigo-500/30' 
                             : 'text-zinc-500 hover:text-zinc-300'
@@ -173,7 +173,7 @@ export const VFX: React.FC = () => {
         </div>
         
         {filteredProjects.length === 0 && (
-            <div className="text-center py-20 text-zinc-500 font-mono">
+            <div className="text-center py-20 text-zinc-500">
                 No projects found in this category.
             </div>
         )}

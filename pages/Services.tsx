@@ -9,7 +9,7 @@ export const Services: React.FC = () => {
   const pricingModels = [
     {
       name: "The Sprint",
-      price: "$80/hr",
+      price: "$70/hr",
       description: "Perfect for rapid troubleshooting, quick shader adjustments, or technical advisory sessions.",
       features: [
         "Code Reviews",
@@ -61,7 +61,7 @@ export const Services: React.FC = () => {
        <div className="max-w-7xl mx-auto">
          {/* Header */}
          <div className="text-center mb-20">
-           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Strategic Tech Art Services</h1>
+           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-sansation">Strategic Tech Art Services</h1>
            <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
              Let’s make your project lighter, smarter, and smoother.
            </p>
@@ -79,13 +79,13 @@ export const Services: React.FC = () => {
               }`}
              >
                {tier.isPopular && (
-                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-500 rounded-full text-xs font-bold font-mono text-white tracking-wide shadow-lg shadow-indigo-500/50">
+                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-500 rounded-full text-xs font-bold  text-white tracking-wide shadow-lg shadow-indigo-500/50">
                    MOST POPULAR
                  </div>
                )}
                
-               <h3 className="text-xl font-medium text-white mb-2">{tier.name}</h3>
-               <div className="text-4xl font-bold text-white mb-4 font-mono">{tier.price}</div>
+               <h3 className="text-xl font-medium text-white mb-2 font-sansation">{tier.name}</h3>
+               <div className="text-4xl font-bold text-white mb-4 font-sansation">{tier.price}</div>
                <p className="text-zinc-400 text-sm mb-8 min-h-[40px]">{tier.description}</p>
 
                <ul className="space-y-4 mt-auto">
@@ -104,14 +104,14 @@ export const Services: React.FC = () => {
 
          {/* Capabilities Grid */}
          <div className="mb-32">
-            <h2 className="text-3xl font-bold text-white mb-12 text-center">Core Capabilities</h2>
+            <h2 className="text-3xl font-bold text-white mb-12 text-center font-sansation">Core Capabilities</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {capabilities.map((cap, idx) => (
                     <div key={idx} className="p-6 rounded-2xl bg-zinc-900/30 backdrop-blur-sm border border-zinc-800 hover:border-zinc-700 transition-colors group">
                         <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
                             <cap.icon size={20} />
                         </div>
-                        <h3 className="text-lg font-semibold text-white mb-1">{cap.title}</h3>
+                        <h3 className="text-lg font-semibold text-white mb-1 font-sansation">{cap.title}</h3>
                         <p className="text-zinc-500 text-sm">{cap.desc}</p>
                     </div>
                 ))}
@@ -120,8 +120,8 @@ export const Services: React.FC = () => {
 
          {/* Main CTA */}
          <div className="flex flex-col items-center justify-center border-t border-zinc-900 pt-16 text-center">
-            <span className="text-indigo-400 font-medium tracking-wider text-sm uppercase mb-4 block font-mono">Let's build something extraordinary</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Ready for the next level?</h2>
+            <span className="text-indigo-400 font-medium tracking-wider text-sm uppercase mb-4 block font-sansation">Let's build something extraordinary</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-sansation">Ready for the next level?</h2>
             <Button 
                 variant="primary" 
                 size="lg" 

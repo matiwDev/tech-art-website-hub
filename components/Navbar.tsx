@@ -53,7 +53,7 @@ export const Navbar: React.FC = () => {
               key={link.path} 
               to={link.path}
               className={({ isActive }) => 
-                `text-sm font-medium transition-colors hover:text-white ${
+                `text-sm font-medium transition-colors hover:text-white font-sansation ${
                   isActive ? 'text-white' : 'text-zinc-400'
                 }`
               }
@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
               <button
                 key={link.path}
                 onClick={() => handleMobileNav(link.path)}
-                className={`text-left text-lg font-medium ${
+                className={`text-left text-lg font-medium font-sansation ${
                   location.pathname === link.path ? 'text-white' : 'text-zinc-400'
                 }`}
               >

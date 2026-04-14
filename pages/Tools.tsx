@@ -72,14 +72,14 @@ export const Tools: React.FC = () => {
                       <div className={`w-12 h-12 rounded-xl bg-zinc-950/50 border border-zinc-800 flex items-center justify-center transition-transform ${isActive ? 'group-hover:scale-110 group-hover:border-purple-500/30' : ''}`}>
                           <tool.icon className={`transition-colors ${isActive ? 'text-zinc-200 group-hover:text-purple-400' : 'text-zinc-500'}`} size={24} />
                       </div>
-                      <div className={`px-2 py-1 rounded-md border text-[10px] uppercase font-bold tracking-wider font-mono ${getCategoryColor(tool.category)}`}>
+                      <div className={`px-2 py-1 rounded-md border text-[10px] uppercase font-bold tracking-wider  ${getCategoryColor(tool.category)}`}>
                           {tool.category}
                       </div>
                   </div>
                   
                   <div className="relative z-10 flex items-center gap-2 mb-2">
                       <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-white group-hover:text-purple-100' : 'text-zinc-300'}`}>{tool.name}</h3>
-                      <span className="text-xs text-zinc-500 font-mono">v{tool.version}</span>
+                      <span className="text-xs text-zinc-500">v{tool.version}</span>
                   </div>
                   
                   <p className="relative z-10 text-zinc-400 text-sm mb-8 flex-grow leading-relaxed">
@@ -89,14 +89,14 @@ export const Tools: React.FC = () => {
                   <div className="relative z-10 mt-auto pt-6 border-t border-zinc-800/50 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                           <div className={`w-2 h-2 rounded-full ${getStatusColor(tool.status)}`}></div>
-                          <span className="text-xs text-zinc-500 font-medium font-mono uppercase">{tool.status}</span>
+                          <span className="text-xs text-zinc-500 font-medium uppercase">{tool.status}</span>
                       </div>
                       
                       {isActive ? (
                           <Button 
                               variant="ghost"
                               size="sm" 
-                              className="text-zinc-300 group-hover:text-white p-0 hover:bg-transparent font-mono text-xs"
+                              className="text-zinc-300 group-hover:text-white p-0 hover:bg-transparent font-sansation text-xs"
                           >
                               DETAILS <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
                           </Button>
@@ -104,7 +104,7 @@ export const Tools: React.FC = () => {
                           <Button 
                               variant="ghost"
                               size="sm" 
-                              className="text-indigo-400 group-hover:text-indigo-300 p-0 hover:bg-transparent font-mono text-xs"
+                              className="text-indigo-400 group-hover:text-indigo-300 p-0 hover:bg-transparent font-sansation text-xs"
                           >
                               FOLLOW ROADMAP <Microscope size={14} className="ml-2" />
                           </Button>
