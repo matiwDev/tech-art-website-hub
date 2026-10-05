@@ -49,7 +49,7 @@ export const Tools: React.FC = () => {
               return (
                 <div 
                   key={tool.id}
-                  onClick={() => isActive ? navigate(`/tools/${tool.id}`) : navigate('/blog')}
+                  onClick={() => navigate(`/tools/${tool.id}`)}
                   className={`group relative p-6 rounded-2xl border bg-zinc-900/40 backdrop-blur-xl border-zinc-800 transition-all duration-300 flex flex-col h-full overflow-hidden cursor-pointer ${
                       isActive
                       ? 'hover:border-purple-500/50 hover:bg-zinc-900/60 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-900/10' 
@@ -77,8 +77,15 @@ export const Tools: React.FC = () => {
                       </div>
                   </div>
                   
-                  <div className="relative z-10 flex items-center gap-2 mb-2">
-                      <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-white group-hover:text-purple-100' : 'text-zinc-300'}`}>{tool.name}</h3>
+                  <div className="relative z-10 flex items-center gap-2 mb-2 flex-wrap">
+                      <h3 className={`text-xl font-bold font-sansation transition-colors ${isActive ? 'text-white group-hover:text-purple-100' : 'text-zinc-300'}`}>
+                        {tool.name.replace(' (Pro)', '')} 
+                        {tool.name.includes('(Pro)') && (
+                            <span className="inline-block ml-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-purple-500/20 text-purple-400 border border-purple-500/30 align-middle">
+                                Pro
+                            </span>
+                        )}
+                      </h3>
                       <span className="text-xs text-zinc-500">v{tool.version}</span>
                   </div>
                   
@@ -98,7 +105,7 @@ export const Tools: React.FC = () => {
                               size="sm" 
                               className="text-zinc-300 group-hover:text-white p-0 hover:bg-transparent font-sansation text-xs"
                           >
-                              DETAILS <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                              EXPLORE <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
                           </Button>
                       ) : (
                           <Button 

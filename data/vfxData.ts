@@ -56,5 +56,40 @@ export const vfxData: VFXProject[] = [
     category: 'Shaders', 
     mediaUrl: 'https://res.cloudinary.com/djcksi74n/image/upload/q_auto,f_auto/v1771915801/Screenshot_2026-02-23_at_15.24.27_rg8os1.png', 
     size: 'small' 
-  }
+  },
+  { 
+    id: 8, 
+    title: 'Tooltip', 
+    category: 'Shaders', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/video/upload/v1788698986/Tooltip_p40mac.mov', 
+    size: 'medium' 
+  },
+  {
+    id: 9, 
+    title: 'Procedural Rays', 
+    category: 'Shaders', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/video/upload/v1788698996/Procedural_Rays_hs2umu.mov', 
+    size: 'medium' 
+  },
+  { 
+    id: 10, 
+    title: 'Quest In', 
+    category: 'VFXs', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/video/upload/v1788698991/SimpleFloatChar_pgy5ky.mov', 
+    size: 'large' 
+  },
+  {
+    id: 11, 
+    title: 'TMP Laundry', 
+    category: 'Shaders', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/image/upload/v1789412553/Screenshot_2026-09-08_at_19.09.46_oap3pq.png', 
+    size: 'medium' 
+  },
+  {
+    id: 12, 
+    title: 'TMP Cookie', 
+    category: 'Shaders', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/image/upload/v1789412553/Screenshot_2026-09-09_at_10.51.05_khew87.png', 
+    size: 'medium' 
+  },
 ];
