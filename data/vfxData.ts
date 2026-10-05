@@ -43,11 +43,11 @@ export const vfxData: VFXProject[] = [
     mediaUrl: 'https://res.cloudinary.com/djcksi74n/image/upload/q_auto,f_auto/v1771915802/Screenshot_2026-02-23_at_18.03.24_qgej2c.png', 
     size: 'medium' 
   },
-  { 
+  {
     id: 6, 
-    title: 'Particle Chaos', 
-    category: 'VFXs', 
-    mediaUrl: 'https://IntentionalBroken/UntilIGet/SomeContent', 
+    title: 'ThrusterFlame', 
+    category: 'Shaders', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/video/upload/v1791218610/Astrounaut_ey8bqu.mov', 
     size: 'large' 
   },
   { 
@@ -91,5 +91,12 @@ export const vfxData: VFXProject[] = [
     category: 'Shaders', 
     mediaUrl: 'https://res.cloudinary.com/djcksi74n/image/upload/v1789412553/Screenshot_2026-09-09_at_10.51.05_khew87.png', 
     size: 'medium' 
+  },
+  {
+    id: 6, 
+    title: 'ThrusterFlame', 
+    category: 'Shaders', 
+    mediaUrl: 'https://res.cloudinary.com/djcksi74n/video/upload/v1791218610/Astrounaut_ey8bqu.mov', 
+    size: 'large' 
   },
 ];
